@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
    <head>
-    <title>Careers &mdash; Website Template by Colorlib</title>
+    <title>Job Recommender System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../landingassets/css/custom-bs.css">
@@ -265,7 +265,7 @@
                 <img class="img-fluid mx-auto" src="../landingassets/images/person_1.jpg" alt="Image">
                 <blockquote>
                   <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;</p>
-                  <p><cite> &mdash; Richard Anderson</cite></p>
+                  <p><cite> &mdash; Sanjay Janyani</cite></p>
                 </blockquote>
               </div>
             </div>
@@ -277,7 +277,7 @@
                 <img class="img-fluid mx-auto" src="../landingassets/images/person_2.jpg" alt="Image">
                 <blockquote>
                   <p>&ldquo;Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero dolores repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum repudiandae.&rdquo;</p>
-                  <p><cite> &mdash; Chris Peters</cite></p>
+                  <p><cite> &mdash; Piyush Lund</cite></p>
                 </blockquote>
               </div>
             </div>
@@ -287,20 +287,7 @@
 
     </section>
 
-    <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('../landingassets/images/hero_1.jpg');">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <h2 class="text-white">Looking For A Job?</h2>
-            <p class="mb-0 text-white lead">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci
-              impedit.</p>
-          </div>
-          <div class="col-md-3 ml-auto">
-            <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
-          </div>
-        </div>
-      </div>
-    </section>
+   
     
     <footer class="site-footer">
 
@@ -346,17 +333,7 @@
           </div>
         </div>
 
-        <div class="row text-center">
-          <div class="col-12">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
-                class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
+       
       </div>
     </footer>
   

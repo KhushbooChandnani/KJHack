@@ -1,9 +1,4 @@
   
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" /> -->
-
-
 <style type="text/css">
     /*@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";*/
 
@@ -29,7 +24,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Suggested Students</a>
+            <a class="navbar-brand" href="#pablo">Company Login</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -94,18 +89,7 @@
     <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-             <div class="card"> 
-              <div class="card-header card-header-primary">
-                  <h3 class="card-title">Filter Students based on their Skills, Branch and Designation</h3>
-                  
-                </div>
-            <form action="/filter" method="post"> 
-                                     @csrf
-   
-                <div class="card-body">
-                  <div class="row">
-                  <div class="col-md-4">
+          <div class="col-md-5">
                                   <div class="form-group">
                                     <!-- <div class="form-group"> -->
                                     <!-- <label for="sel1">Gender</label> -->
@@ -130,122 +114,88 @@
                                     </select>
                                     <!-- </div> -->
                                   </div>
+
                     </div>
-                    <div class="col-md-3" style="margin-top: 10px;">
+                     <div class="col-md-5">
                                   <div class="form-group">
-                                    <input type="radio" id="defaultRadio" name="experience" value="Experienced">
-                                    <label for="defaultRadio">Experienced</label>
-                                    <input type="radio" id="defaultRadio" name="experience" value="Fresher" style="margin-left: 10px;">
-                                    <label for="defaultRadio">Fresher</label>
-                                    <input type="radio" id="defaultRadio" name="experience" value="Intern" style="margin-left: 10px;">
-                                    <label for="defaultRadio">Intern</label>
+                                    <label class="bmd-label-floating">Filter Based on Location</label>
+                                    <input type="text" class="form-control" name="location">
                                   </div>
-                                </div>
-                                  <div class="col-md-4">
-                                  <div class="form-group">
-                                    <!-- <div class="form-group"> -->
-                                    <!-- <label for="sel1">Gender</label> -->
-
-                                    <select name="branch[]" id="branch_select" multiple="multiple" class="form-control" >
-                                      <option value="Computer Science">Computer Science</option>
-                                      <option value="Information Technology">Information Technology</option>
-                                      <option value="Electronics">Electronics </option>
-                                      <option value="Electrical">Electrical </option>
-                                      <option value="Intrumentation">Intrumentation </option>
-
-                                    </select>
-                                    <!-- </div> -->
-                                  </div>
+                                  
                     </div>
-              </div>
-               <button type="submit" class="btn btn-warning">Filter Students</button> 
-              <!-- <div class="row"> 
-                  <div class="form-group">
-   
-        <select class="selectpicker" multiple data-live-search="true">
-  <option>Mustard</option>
-  <option>Ketchup</option>
-  <option>Relish</option>
-</select>
-    </div>
-</div>     -->
-              </div>
-         </form>
-
-<!-- <button class="btn-save btn btn-primary btn-sm">Save</button> -->
-            </div>
+                    <div class="col-md-2">
+                                  <div class="form-group">
+                                    <button class="btn btn-primary" style="margin-top: -10px;">Filter</button>
+                                  </div>
+                                  
+                    </div>
+                  </div>
+          <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title">Some Bright Students</h3>
-                  <p class="card-category"> Here are some students having such special skills</p>
+                  <h2 class="card-title">LinkedIn Jobs</h2>
+                  <p class="card-category">Find LinkedIn Profiles Here</p>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class=" text-primary">
+                <section class="site-section">
+      <div class="container jobs">
 
-                        
-                        <th name="sr_no">
-                          Sr No
-                        </th>
-                        <th name="name">
-                          Name
-                        </th>
-                        <th name="stream">
-                          Stream
-                        <th name="skills">
-                          Special Skills
-                        </th>
-                        
-                        <th>
-                          Experience
-                        </th>
-                        <th>
-                          View Profile 
-                        </th>
-                      </thead>
-                      <tbody>
-                       
-                       
-                     
-                        <tr>
-                          <td>
-                            
-                          </td>
-                          <td>
-                                
-                          </td>
-                          <td>
-                             
-                          </td>
-                          <td>
-                          
+       
+        
+        
+        <div class="mb-5">
+        @foreach($linkedin as $linkedin)  
 
-                          </td>
-                            
+          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+            <div class="col-md-2">
+              <h2><a href="job-single.html">{{ $linkedin->user_name }}</a> </h2>
+               <p class="meta"> {{ $linkedin->connections }} Connections </p>
+            </div>
+            <div class="col-md-2" style="margin-top:-20px;">
+              <h3>{{ $linkedin->location }}</h3>
+              <!-- <span class="meta">Australia</span> -->
+            </div>
+            <div class="col-md-5">
+              <span class="badge badge-warning px-2 py-1 mb-3">{{ $linkedin->skills }}</span>
+               
+            </div>
+            <div class="col-md-2">
+                <h4><a href="https://www.linkedin.com/in/mehul-giri-3b2b5815/">{{ $linkedin->link }}</a></h4>
+            </div>
+          </div>
+          @endforeach
+          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+            <div class="col-md-2">
+              <h2><a href="job-single.html">Mehul Giri</a> </h2>
+               <p class="meta"><strong>500+</strong> Connections </p>
+            </div>
+            <div class="col-md-2" style="margin-top:-20px;">
+              <h3>Mumbai</h3>
+              <!-- <span class="meta">Australia</span> -->
+            </div>
+            <div class="col-md-5">
+              <span class="badge badge-primary px-2 py-1 mb-3">Business Intelligence</span>
+               <span class="badge badge-warning px-2 py-1 mb-3">Automation</span>
+                <span class="badge badge-success px-2 py-1 mb-3">Lean Six Sigma</span>
+                 <span class="badge badge-danger px-2 py-1 mb-3">Strategic Planning</span>
+            </div>
+            <div class="col-md-2">
+                <h4><a href="https://www.linkedin.com/in/mehul-giri-3b2b5815/">https://www.linkedin.com/in/mehul-giri-3b2b5815/</a></h4>
+            </div>
+          </div>
 
-                         <td>
-                           
-                          </td>
-                          <td>
-                          <a href="/instructions"><button type="submit" class="btn btn-info">View Profile</button></a>    
-                          </td>
-                          
-                        </tr>
-                   
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                       
-                        
-                      </tbody>
-                    </table>
-                  </div>
+
+       
+           
+          
+
+        </div>
+        
+        
+
+      </div>
+    </section>
                 </div>
               </div>
             </div>
@@ -254,30 +204,20 @@
       </div>
 
 @include('includes/company_footer')
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></scri -->
 <script src="../../assets/select2/js/select2.min.js"></script>
-<!-- <script type="" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
-
-<script>
+ <script>
 
   jQuery(document).ready(function() {
 
     $("#skill_select").select2({
       multiple: true,
-      placeholder: "Choose required Skillset",
+      placeholder: "Filter based on SkillSet",
 
     });
 
-    $("#branch_select").select2({
-      multiple: true,
-      placeholder: "Choose required Branch",
-
-    });
+   
 
 
   });
 
 </script>
-

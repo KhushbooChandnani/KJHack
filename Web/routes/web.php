@@ -44,6 +44,10 @@ Route::get('/user_profile', function () {
     return view('template/user');
 });
 
+Route::get('/notifications', function () {
+    return view('template/notifications');
+});
+
 Route::post('/personal_details','UserController@store');
 
 Route::post('/academics','UserController@storeAcademics');
@@ -72,6 +76,12 @@ Route::get('/suggested_students', function () {
 Route::get('/search_students', function () {
     return view('company/search_students');
 });
+
+// Route::get('/linkedin_students', function () {
+//     return view('company/linkedin_students');
+// });
+
+Route::get('linkedin_students','UserController@linkedin_profile');
 
 Route::get('view_jobs','TestControler@show_jobs');
 //Route::get('/view_jobs', function () {
@@ -129,5 +139,6 @@ Route::get('/performance', function () {
     return view('template/performance');
 });
 
+Route::post('/filter','UserController@filter_students');
 
 
